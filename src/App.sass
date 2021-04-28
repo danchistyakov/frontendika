@@ -1,0 +1,107 @@
+*
+  font-family: 'Inter', sans-serif
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  outline: 0
+  color: inherit
+  position: relative
+  font-weight: 400
+  font-size: 1vw
+
+a
+  text-decoration: none
+
+h1, h2
+  font-weight: 500
+  font-size: 1.5vw
+
+.site_title
+  font-size: 2vw
+  color: #000
+
+.top_navbar
+  position: sticky
+  background-color: hsla(0,0%,100%,.72)
+  -webkit-backdrop-filter: saturate(180%) blur(20px)
+  backdrop-filter: saturate(180%) blur(20px)
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 1vw 2vw
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+  z-index: 9
+  top: 0
+
+.header_search
+  font-size: 1.1vw
+  border-radius: 50px
+  border: 1px solid #666
+  padding: .6vw
+  outline: 0
+  width: 30vw
+
+.nav_desktop
+  display: flex
+
+.top_nav a
+  color: #666
+  font-size: 1.3vw
+  padding: .8vw
+  border-radius: 50px
+  transition: .5s
+  border: 1px solid #fafafa
+  margin: 0 .2vw
+  border: none
+
+.top_nav a:hover
+  background: #000
+  color: #fff
+
+.section_title
+  margin: 2vw
+  font-size: 2.5vw
+  font-weight: 500
+
+footer
+  border-top: 1px solid rgba(0,0,0,.1)
+  padding: 2vw 0
+
+footer p
+  color: #666
+  margin-left: 2vw
+  font-size: 1.1vw
+
+@media only screen and (max-width: 767px)
+  .section_title
+    margin: 2vw
+    font-size: 6vw
+
+  .top_navbar
+    display: block
+
+  .header_search
+    width: 50%
+    font-size: 3vw
+    padding: 2vw
+    margin-left: 3vw
+
+  .desktop_nav
+    display: none
+
+  .site_title
+    font-size: 6vw
+
+  .top_nav
+    padding: 3vw 0
+    overflow-x: auto
+
+  .top_nav a
+    font-size: 4vw
+    padding: 2vw
+
+  footer p
+    font-size: 4vw
+    padding: 3vw 0
