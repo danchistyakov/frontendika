@@ -59,7 +59,6 @@ const Home = () => {
                                 <h2 className={style.post_title}>{res?.title}</h2>
                                 <p className={style.post_date}>{dateFormat(list?.res?.publishDate, "mmmm d, yyyy")}</p>
                                 <p className={style.post_description}>{res?.description}</p>
-                                <p>{res?.sys.id}</p>
                             </div>
                         </Link>
                     </article>

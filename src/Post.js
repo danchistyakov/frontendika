@@ -11,7 +11,7 @@ const Post = () => {
 
     useEffect(() => {
         const Fetch = async () => {
-            const response = await fetch(`http://cdn.contentful.com/spaces/vbmihum32kfk/environments/master/entries?access_token=caXHRNhnYPw2HeFYLckhsEeflYg1L7qr-6ZuKjMydY0&content_type=blogPost&fields.slug=${slug}`);
+            const response = await fetch(`https://cdn.contentful.com/spaces/vbmihum32kfk/environments/master/entries?access_token=caXHRNhnYPw2HeFYLckhsEeflYg1L7qr-6ZuKjMydY0&content_type=blogPost&fields.slug=${slug}`);
             const result = await response.json();
             //console.log(result);
             setContent(result.items[0]);
@@ -41,7 +41,7 @@ const Post = () => {
                     }
                 />
             </section>
-        </section >
+        </section>
     )
 }
 

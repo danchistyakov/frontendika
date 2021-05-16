@@ -38,10 +38,44 @@ h1, h2
 .header_search
   font-size: 1.1vw
   border-radius: 50px
+  background: #fff
   border: 1px solid #666
   padding: .6vw
   outline: 0
   width: 30vw
+  height: 2.8vw
+  z-index: 1
+
+.header_search.active
+  padding: .5vw
+  border-radius: 15px 15px 0 0
+  z-index: 99999
+
+.search_input
+  border: none
+  width: 100%
+  height: 100%
+
+.header_results
+  margin-top: .5vw
+  left: 0
+  background-color: #fff
+  border-left: 1px solid #666
+  border-right: 1px solid #666
+  border-bottom: 1px solid #666
+  width: 100%
+  border-radius: 0 0 10px 10px
+  position: absolute
+  z-index: 99999
+  max-height: 50vh
+  overflow-y: auto
+
+.search_result
+  border-top: 1px solid #666
+  padding: .5vw
+
+.result_title
+  font-weight: 500
 
 .nav_desktop
   display: flex
@@ -74,6 +108,14 @@ footer p
   margin-left: 2vw
   font-size: 1.1vw
 
+.container_popup
+  position: absolute
+  z-index: 1
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+
 @media only screen and (max-width: 767px)
   .section_title
     margin: 2vw
@@ -83,10 +125,26 @@ footer p
     display: block
 
   .header_search
-    width: 50%
+    width: 70%
+    height: 10vw
     font-size: 3vw
-    padding: 2vw
-    margin-left: 3vw
+    padding: 1vw 2vw
+    margin: auto
+
+  .header_search.active
+    padding: 1vw 2vw
+
+  .search_input
+    font-size: 3vw
+
+  .search_result
+    padding: 4vw 2vw
+
+  .result_title
+    font-size: 4vw
+
+  .result_description
+    font-size: 3vw
 
   .desktop_nav
     display: none
