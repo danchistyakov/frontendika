@@ -3,41 +3,15 @@ import dateFormat from 'dateformat';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
 import style from './CSS/Home.module.sass'
-const query = `
-{
-  blogPostCollection (preview: false) {
-    items {
-      title
-      description
-      publishDate
-      slug
-      heroImage {
-        url
-      }
-      sys {
-        id
-      }
-      tags
-    }
-  }
-}
-`;
 
 const Home = () => {
     const [list, setList] = useState(null);
 
     useEffect(() => {
         const Fetch = async () => {
-            const response = await fetch(`https://graphql.contentful.com/content/v1/spaces/vbmihum32kfk/`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: "Bearer caXHRNhnYPw2HeFYLckhsEeflYg1L7qr-6ZuKjMydY0",
-                },
-                body: JSON.stringify({ query }),
-            })
+            const response = await fetch(`https://api.buttercms.com/v2/posts/?auth_token=190894285463021ec08a094fd530cfdc14485c46`)
             const result = await response.json();
-            setList(result?.data.blogPostCollection.items);
+            setList(result?.data);
         }
         Fetch();
     }, []);
@@ -52,13 +26,13 @@ const Home = () => {
             <div className={style.posts_feed}>
                 {list?.map((res, key) => (
                     <article key={key} className={style.post}>
-                        <Link to={{ pathname: `/post/${res?.slug}`, query: res?.sys.id }}>
-                            <div className={style.poster} style={{ backgroundImage: `url(${res?.heroImage.url})` }}>
+                        <Link to={{ pathname: `/post/${res?.slug}`, query: res?.slug }}>
+                            <div className={style.poster} style={{ backgroundImage: `url(${res?.featured_image})` }}>
                             </div>
                             <div className={style.post_content}>
                                 <h2 className={style.post_title}>{res?.title}</h2>
-                                <p className={style.post_date}>{dateFormat(list?.res?.publishDate, "mmmm d, yyyy")}</p>
-                                <p className={style.post_description}>{res?.description}</p>
+                                <p className={style.post_date}>{dateFormat(list?.published, "mmmm d, yyyy")}</p>
+                                <p className={style.post_description}>{res?.summary}</p>
                             </div>
                         </Link>
                     </article>

@@ -36,7 +36,7 @@
     font-size: 1.2vw
 
 .post_content
-    width: 50vw
+    width: 60vw
     margin: auto
     margin: 1.5vw auto
 
@@ -44,8 +44,33 @@
     width: 70vw
     margin: auto
 
-.post_content p
-    font-size: 1vw
+.post_content
+    & p
+        font-size: 1vw
+        margin: 1vw auto
+
+    & img
+        max-width: 100%
+
+.posts_between
+    border: 1px solid #000
+    background: transparent
+    cursor: pointer
+    font-size: 1.2vw
+    margin-top: 1vw
+    padding: .8vw
+    border-radius: 50px
+    transition: .5s
+    margin: 0 .2vw
+
+    &:hover
+        background: #0070f3
+        color: #fff
+        border-color: #0070f3
+
+.posts_nav
+    display: flex
+    justify-content: center
 
 @media only screen and (max-width: 767px)
     .post_hero

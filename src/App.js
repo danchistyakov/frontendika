@@ -8,7 +8,7 @@ import Contact from './Contact';
 import Footer from './Footer';
 import { HelmetProvider } from 'react-helmet-async';
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   return (
@@ -17,10 +17,12 @@ const App = () => {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet"></link>
         <Header />
-        <Route exact path="/" component={Home} />
-        <Route path="/post/:slug" component={Post} />
-        <Route path="/category/:category" component={Category} />
-        <Route path="/contact" component={Contact} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/post/:slug" component={Post} />
+          <Route path="/category/:category" component={Category} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
         <Footer />
       </Router>
     </HelmetProvider>
