@@ -15,7 +15,6 @@ const Post = () => {
         const Fetch = async () => {
             const response = await fetch(`https://api.buttercms.com/v2/posts/${slug}/?auth_token=190894285463021ec08a094fd530cfdc14485c46`);
             const result = await response.json();
-            console.log(result);
             setContent(result);
         }
         Fetch();

@@ -12,7 +12,6 @@ const Category = () => {
         const Fetch = async () => {
             const response = await fetch(`https://api.buttercms.com/v2/tags/${category}/?include=recent_posts&auth_token=190894285463021ec08a094fd530cfdc14485c46`)
             const result = await response.json();
-            console.log(result?.data?.recent_posts);
             setContent(result?.data?.recent_posts)
         }
         Fetch();
@@ -30,10 +29,10 @@ const Category = () => {
                         <Link to={{ pathname: `/post/${res?.url}`, query: res?.slug }}>
                             <div className='poster' style={{ backgroundImage: `url(${res?.featured_image})` }}>
                             </div>
-                            <div className='post_content'>
-                                <h2 className='post_title'>{res?.title}</h2>
-                                <p className='post_date'>{dateFormat(res?.published, "mmmm d, yyyy")}</p>
-                                <p className='post_description'>{res?.summary}</p>
+                            <div className='item_content'>
+                                <h2 className='item_title'>{res?.title}</h2>
+                                <p className='item_date'>{dateFormat(res?.published, "mmmm d, yyyy")}</p>
+                                <p className='item_description'>{res?.summary}</p>
                             </div>
                         </Link>
                     </article>
